@@ -1,0 +1,294 @@
+#titleOuter{
+/*
+	background-color:black;
+	z-index:-20;
+	width:80px;
+	opacity:.5;
+	*/
+}	
+#fig{
+	position:absolute;
+	height:55px;
+	z-index:-10;
+	opacity:.3;
+	border-style:solid;
+	border-color:black;
+	border-width:0px;
+}
+#getSample{
+	margin-left:344px;
+	font-size:8px;
+	margin-top:-17px;
+	padding:1px;
+	padding-left:2px;
+	padding-right:2px;
+	position:absolute;
+	border-style:solid;
+	border-radius:6px;
+}
+#showN{
+	color:red;
+}
+#pointSizeInput{
+	resize:none;
+	width:20px;
+	
+}
+#pointSize{
+	font-size:14px;
+	vertical-align:top;
+}	
+#nMessage{
+	font-size:13px;
+	margin-top:20px;
+}
+#secondaryOptionsContainer{
+	text-align:center;
+	display:inline-block;
+	width:260px;
+	margin-left:3px;
+}
+#container{
+	margin:0px;
+}
+#body{
+	margin:0px;
+}
+#instructionsText{
+	position:absolute;
+	z-index:300;
+	width:350px;
+	height:520px;
+	background-color:rgb(255,255,209);
+	border-style:solid;
+	border-color:black;
+	border-width:2px;
+	border-radius:2px;
+	margin-left:370px;
+	margin-top:102px;	
+	padding:5px;
+}
+.instructionsBlock{
+	margin-bottom:5px;
+}
+.hidden{
+	display:none;
+}
+#instructionsButton{
+	vertical-align:middle;
+	font-family:helvetica;
+	font-weight:bold;
+	font-size:10px;
+	color:rgb(0,0,140);
+	background-color:rgb(215,255,255);
+	border-color:black;
+	border-style:solid;
+	border-radius:5px;
+	border-width:1px;
+	padding:2px;
+	margin-top:35px;
+	margin-left:-17px;
+	cursor:pointer;
+}
+#formattingKey{
+	display:inline-block;
+	margin-left:5px;
+	font-size:13px;
+}
+#msgBox{
+	text-align:center;
+	font-size:12px;
+	margin-left:0px;
+	color:red;
+	margin-right:0px;
+	vertical-align:top;
+	margin-top:3px;
+}
+#optionsContainer{
+	margin-top:-5px;
+	vertical-align:top;
+	margin-left:5px;
+	display:inline-block;
+}
+#min{
+	margin-left:102px;
+}
+#max{
+	margin-left:156px;	
+}
+.minmax{
+	vertical-align:top;
+	font-size:10px;
+	padding:0px;
+	position:absolute;
+	margin-top:5px;
+}
+.limitsBox{
+	margin-left:18px;
+	vertical-align:top;
+	font-size:14px;
+}
+.limits{
+	width:40px;
+}
+#showAxesContainer{
+	margin-top:4px;
+	font-size:12px;
+}
+#styleContainer{
+	display:inline-block;
+	vertical-align:top;
+}
+#formulaContainer{
+	display:inline-block;
+	vertical-align:top;
+	margin-left:10px;
+}
+.graphStyleOuter{
+	display:none;
+}
+.graphStyle{
+	margin-left:10px;
+	vertical-align:top;
+}
+#title{
+	padding:3px;
+	font-family:helvetica;
+	font-size:19px;
+	margin-bottom:5px;
+	color:rgb(72,0,0);
+}
+.buttons{
+	vertical-align:top;
+	margin-left:2px;
+	margin-bottom:8px;
+	cursor:pointer;
+	background-color:white;
+	margin:2px;
+	margin-top:-1px;
+	padding-top:0px;
+	padding-bottom:1px;
+}
+#cursor1{
+	height:0px;
+	width:0px;
+	background-color:black;
+	border-left:8px solid transparent;
+	border-bottom:8px solid yellow;
+	position:absolute;
+}
+#cursor2{
+	height:12px;
+	width:2px;
+	background-color:black;
+	 -ms-transform: rotate(-45deg); /* IE 9 */
+	-webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+	transform: rotate(-45deg);
+	position:absolute;
+	margin-left:5px;
+}
+#cursor{
+	position:absolute;
+	
+	height:10px;
+	width:10px;
+	border-style:solid;
+	border-color:black;
+	border-width:0px;
+}
+.axes{
+	
+}
+.showing{
+	display:none;
+}
+#showAxes{
+	vertical-align:top;
+}
+#generate{
+	vertical-align:top;
+	margin-top:-1px;
+	font-size:11px;
+	padding-top:1px;
+	padding-bottom:2px;
+	padding-left:8px;
+	padding-right:8px;
+	background-color:rgb(255,235,213);
+	
+}
+#leftxNotch{
+	margin-left:4px;
+}
+#xAxis{
+	border-color:black;
+	height:1px;
+	background-color:black;
+	width:800px;
+	margin-top:400px;
+	z-index:100;
+	position:fixed;
+	
+}
+#yAxis{
+	border-color:black;
+	height:800px;
+	width:1px;
+	background-color:black;
+	margin-left:400px;
+	z-index:100;
+	position:absolute;
+}
+.xNotch{
+	width:1px;
+	height:9px;
+	background-color:black;
+	margin-left:9px;
+	margin-top:-4px;
+	display:inline-block;
+	position:relative;
+	vertical-align:top;
+}
+#topyNotch{
+	margin-Top:0px;
+	background-color:white;
+}
+.yNotch{
+	width:9px;
+	height:1px;
+	margin-left:-4px;
+	background-color:black;
+	margin-top:9px;
+}
+textarea{
+	height:12px;
+	resize:none;
+	vertical-align:top;
+	margin-bottom:3px;
+}
+#formula{
+	margin-bottom:2px;
+	width:300px;
+	font-size:12px;
+}
+#graph{
+	border-style:solid;
+	border-color:black;
+	border-width:1px;
+	height:800px;
+	width:800px;
+	margin-top:4px;
+	display:inline-block;
+}
+#ylabel{
+	display:inline-block;
+	vertical-align:top;
+}
+.ylabelnum{
+	margin-bottom:380px;
+}
+#xlabel{
+	display:inline-block;
+}
+.xlabelnum{
+	margin-right:372px;
+}
