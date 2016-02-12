@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+	<title>graphit</title>
+	<link rel='stylesheet' type='text/css' href='./graphit.css'></link>
+	<script type='text/javascript' src='https://code.jquery.com/jquery-2.1.3.js'></script>
+	<script type='text/javascript' src='./graphit2.js'></script>
+</head>
+<body>
+	<div id='container'>
+		<!--<button id='movedots'>move dots</button>-->
+		<div id='instructionsText' class='hidden'>
+			Valid characters for Graphit Formula: <br><b>0 1 2 3 4 5 6 7 8 9 + - * / ( ) sin cos tan pow , . n x</b><br><br>
+			<div class='instructionsBlock'>
+				<b>graphit</b> is a visualization tool for simple mathematical functions. <br>
+				Power functions (<b>pow</b>) and basic trigonometric functions (<b>sin</b>, <b>cos</b>, <b>tan</b>) are supported. <br>
+				<b>pow(x,2)</b> is equivalent to <b>x<sup>2</sup></b>. Trig functions are written as <b>sin(x)</b>, <b>cos(3*n)</b>, <b>tan(x/n)</b>. 
+			</div>
+			<div class='instructionsBlock'>
+				Graphit will draw mathematical curves (as a series of points) for a given function of <b><i>x</i></b>. <br>
+				Curves can be plotted against a second variable <b><i>n</i></b> to generate some interesting behavior. <br>
+				The function, limits and increments of <b><i>x</i></b> and <b><i>n</i></b>, and point size can all be modified. <br>
+			</div>
+			<div class='instructionsBlock'>
+				
+				Group statements by parentheses and use <b>*</b> for multiplication. <br>
+				
+				An example formula has been preloaded into the formula field. Click <b>graphit</b> to see how it works.<br>
+			</div>
+			<div class='instructionsBlock'>
+				The graphing function can slow as the graph becomes more complicated.<br>
+				Smaller increments result in more intricate/full designs, but also require more time to complete.<br>
+				Press <b>stop</b> to stop processing and <b>clear</b> to clear graphing window.<br> 
+				Graphs can be overlaid, but processing speed will suffer considerably (use <b>clear</b>!).<br>
+				
+			</div>
+			
+		</div>
+		<div id='titleOuter'>
+			<img id='fig' src='graphitFig.jpg'/>
+			<span id='title'><b>graphit</b></span><br>
+		</div>
+		<div id='styleContainer'>
+			<div class='graphStyleOuter'><input class='graphStyle' id='std' name='radio1' type='radio' checked/> Standard </div>
+			<div class='graphStyleOuter'><input class='graphStyle' id='para' name='radio1' type='radio'/> Parametric </div><br>
+			<div id='nMessage'>n= <span id='showN'></span></div>
+			<div id='pointSize'>Point size: <textarea id='pointSizeInput'>1</textarea> px</div>
+		</div>
+		<div id='formulaContainer'>
+			<!--get sample-->
+			<div>
+			<span id='maxDotsBox'>Max dots: <textarea id='maxDots'>5000</textarea></span>
+			<span><button class='buttons' id='getSample'>new sample</button></span>
+			</div>
+			<span><b>Formula:</b></span>&nbsp;&nbsp;y =&nbsp;<textarea id='formula'></textarea>
+			<button class='buttons' id='generate'><b>graphit</b></button>
+			<button class='buttons clearStop' id='stop'>stop</button>
+			<button class='buttons clearStop' id='clear'>clear</button>&nbsp;<br>
+			
+			<div id='optionsContainer'>
+				<span class='minmax' id='min'>min</span><span class='minmax' id='max'>max</span><br>
+				<!-- limits of x-->
+				<span class='limitsBox'>limits of <b>x</b>: &nbsp;<textarea class='limits' id='xLower'>-40</textarea>&nbsp;
+					<textarea class='limits' id='xUpper'>40</textarea>&nbsp;&nbsp;increment&nbsp;<textarea class='limits' id='xInc'>0.1</textarea>
+				</span>				
+				
+				<br>
+				<!-- limits of n-->
+				<span class='limitsBox'>limits of <b>n</b>: &nbsp;<textarea class='limits' id='nLower'>-60</textarea>&nbsp;
+					<textarea class='limits' id='nUpper'>60</textarea>&nbsp;&nbsp;increment&nbsp;<textarea class='limits' id='nInc'>0.4</textarea>
+				</span>			
+			</div>
+			
+			<div id='secondaryOptionsContainer'>
+				<span id='showAxesContainer'>Show Axes:&nbsp;<input type='checkbox' id='showAxes'/></span><br>
+				<span id='msgBox'></span><br>
+				<span id='instructionsButton'>Instructions</span><!--instructions-->
+			</div>
+		</div>
+		<div id='formattingKey'>
+			Formatting:<br>
+			pow(2,x) = 2<sup>x</sup><br>
+			sin(5*x) - 5/x<br>
+			2*cos(n*x)<br>
+			tan(x/n) + x*(2-n)<br>
+		</div>
+		<br>
+		<!--<div class='ylabel'>+400</div>-->
+		<div id='graphOuter'>
+			<div id='graph'>
+				<div id='cursor' class='hidden'>
+					<div id='cursor1'></div>
+					<div id='cursor2'></div>
+				</div>	
+				<div id='xAxis' class='axes showing'>
+				</div>			
+				<div id='yAxis' class='axes showing'>			
+				</div>						
+			</div>
+			<div id='ylabel'>
+				<div class='ylabelnum'>40</div>
+				<div class='ylabelnum'>0</div>
+				<div id='lastylabelnum'>-40</div>
+			</div><br>
+			<div id='xlabel'>
+				<span class='xlabelnum'>-40</span>
+				<span class='xlabelnum'>0</span>
+				<span class='xlabelnum'>40</span>
+			</div>
+		</div>
+		<!--<div class='ylabel'>-400</div>-->		
+	</div>
+</body>
+</html>
