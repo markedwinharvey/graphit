@@ -1,3 +1,11 @@
+#maxDots{
+	width:50px;
+}
+#maxDotsBox{
+	font-size:14px;
+	vertical-align:top;
+	margin-left:130px;
+}
 #titleOuter{
 /*
 	background-color:black;
@@ -16,13 +24,14 @@
 	border-width:0px;
 }
 #getSample{
-	margin-left:344px;
-	font-size:8px;
-	margin-top:-17px;
+	vertical-align:top;
+	margin-left:60px;
+	font-size:9px;
+	
 	padding:1px;
 	padding-left:2px;
 	padding-right:2px;
-	position:absolute;
+	
 	border-style:solid;
 	border-radius:6px;
 }
@@ -58,7 +67,7 @@
 	position:absolute;
 	z-index:300;
 	width:350px;
-	height:520px;
+	height:540px;
 	background-color:rgb(255,255,209);
 	border-style:solid;
 	border-color:black;
@@ -152,6 +161,7 @@
 	vertical-align:top;
 }
 #title{
+	position:absolute;
 	padding:3px;
 	font-family:helvetica;
 	font-size:19px;
@@ -267,7 +277,7 @@ textarea{
 }
 #formula{
 	margin-bottom:2px;
-	width:300px;
+	width:290px;
 	font-size:12px;
 }
 #graph{

@@ -71,7 +71,7 @@ $(document).ready(function(){
 		moving = false;			
 	});
 	$('#generate').on('click',function(){
-		
+		clearInterval(graphing);
 		hasN = false;
 		$('#msgBox').html('');				
 		
@@ -249,7 +249,7 @@ function showGraph2(action){
 			t+=.2;		
 	},1);
 }
-
+var graphing;
 function showGraph(formula,xLower,xUpper,xInc,nLower,nUpper,nInc,pSize){
 	var index = nInc.indexOf('.');
 	var decimalCount = nInc.substring(index+1,nInc.length).length;
@@ -260,7 +260,7 @@ function showGraph(formula,xLower,xUpper,xInc,nLower,nUpper,nInc,pSize){
 		var n = Math.ceil(nLower*1.);
 		nInc = 1.*nInc;
 		console.log(nLower,nUpper,nInc);
-		var graphing = setInterval(function(){
+		graphing = setInterval(function(){
 			
 			$('.clearStop').on('click',function(){
 				$('#showN').css({'background-color':'white'});

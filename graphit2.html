@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>graphit</title>
-	<link rel='stylesheet' type='text/css' href='./graphit.css'></link>
+	<link rel='stylesheet' type='text/css' href='./graphit.css?var=1'></link>
 	<script type='text/javascript' src='https://code.jquery.com/jquery-2.1.3.js'></script>
 	<script type='text/javascript' src='./graphit2.js'></script>
 </head>
@@ -10,7 +10,7 @@
 	<div id='container'>
 		<!--<button id='movedots'>move dots</button>-->
 		<div id='instructionsText' class='hidden'>
-			Valid characters for Graphit Formula: <br><b>0 1 2 3 4 5 6 7 8 9 + - * / ( ) sin cos tan pow , . n x</b><br><br>
+			Valid characters for <b>graphit</b> Formula: <br><b>0 1 2 3 4 5 6 7 8 9 + - * / ( ) sin cos tan pow , . n x</b><br><br>
 			<div class='instructionsBlock'>
 				<b>graphit</b> is a visualization tool for simple mathematical functions. <br>
 				Power functions (<b>pow</b>) and basic trigonometric functions (<b>sin</b>, <b>cos</b>, <b>tan</b>) are supported. <br>
@@ -28,10 +28,12 @@
 				An example formula has been preloaded into the formula field. Click <b>graphit</b> to see how it works.<br>
 			</div>
 			<div class='instructionsBlock'>
-				The graphing function can slow as the graph becomes more complicated.<br>
+				The graphing function can slow as the graph becomes more complicated (more points are added).<br>
 				Smaller increments result in more intricate/full designs, but also require more time to complete.<br>
 				Press <b>stop</b> to stop processing and <b>clear</b> to clear graphing window.<br> 
-				Graphs can be overlaid, but processing speed will suffer considerably (use <b>clear</b>!).<br>
+				The program is CPU-intensive. To combat unwanted pauses, the 'Max dots' feature has been added.<br>
+				This provides a more dynamic element to the graphs and streamlines experimentation.<br>
+				<!--Graphs can be overlaid, but processing speed will suffer considerably (use <b>clear</b>!).<br>-->
 				
 			</div>
 			
