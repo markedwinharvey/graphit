@@ -1,6 +1,6 @@
 
-![before draw](https://github.com/markedwinharvey/linereg/blob/master/media/graphit_ss_blank.png)
-![drawing](https://github.com/markedwinharvey/linereg/blob/master/media/graphit_ss_draw.png)
+![before draw](https://github.com/markedwinharvey/graphit/blob/master/media/graphit_ss_blank.png)
+![drawing](https://github.com/markedwinharvey/graphit/blob/master/media/graphit_ss_draw.png)
 
 
 graphit displays data from mathematical expressions as a function of variables x and (optionally) n. 
