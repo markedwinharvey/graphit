@@ -1,5 +1,4 @@
 
-![before draw](https://github.com/markedwinharvey/graphit/blob/master/media/graphit_ss_blank.png)
 ![drawing](https://github.com/markedwinharvey/graphit/blob/master/media/graphit_ss_draw.png)
 
 
