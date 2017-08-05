@@ -3,11 +3,19 @@
 <head>
 	<title>graphit</title>
 	<link rel='stylesheet' type='text/css' href='./graphit.css'></link>
-	<script type='text/javascript' src='https://code.jquery.com/jquery-2.1.3.js'></script>
+	<!--<script type='text/javascript' src='https://code.jquery.com/jquery-2.1.3.js'></script>-->
+	<script type='text/javascript' src='./jquery2.1.3.js'></script>
 	<script type='text/javascript' src='./graphit.js'></script>
+	
 </head>
 <body>
 	<div id='container'>
+		
+		
+		<!--___________________________________
+					
+				INSTRUCTIONS TEXT : hidden
+		-->
 		<div id='instructionsText' class='hidden'>
 			Valid characters for Graphit Formula: <br><b>0 1 2 3 4 5 6 7 8 9 + - * / ( ) sin cos tan pow , . n x</b><br><br>
 			<div class='instructionsBlock'>
@@ -30,21 +38,32 @@
 				The graphing function can slow as the graph becomes more complicated.<br>
 				Smaller increments result in more intricate/full designs, but also require more time to complete.<br>
 				Press <b>stop</b> to stop processing and <b>clear</b> to clear graphing window.<br> 
-				Graphs can be overlaid, but processing speed will suffer considerably (use <b>clear</b>!).<br>
-				
+				Graphs can be overlaid, but processing speed will suffer considerably (use <b>clear</b>!).<br>				
 			</div>
-			
 		</div>
+		
+		
+		<!--___________________________________
+					
+				HEADER BAR : TITLE, FORMULA, OPTIONS, ETC.		
+		-->
+		
+		
+		<!--   TITLE   -->
 		<div id='titleOuter'>
 			<img id='fig' src='graphitFig.jpg'/>
 			<span id='title'><b>graphit</b></span><br>
 		</div>
+		
+		<!--   STD/PARA (hidden), current 'n' val, point size   -->
 		<div id='styleContainer'>
 			<div class='graphStyleOuter'><input class='graphStyle' id='std' name='radio1' type='radio' checked/> Standard </div>
 			<div class='graphStyleOuter'><input class='graphStyle' id='para' name='radio1' type='radio'/> Parametric </div><br>
 			<div id='nMessage'>n= <span id='showN'></span></div>
 			<div id='pointSize'>Point size: <textarea id='pointSizeInput'>1</textarea> px</div>
 		</div>
+		
+		<!--   FORMULA CONTAINER   -->
 		<div id='formulaContainer'>
 			<!--get sample-->
 			<span><button class='buttons' id='getSample'>new sample</button></span>
@@ -53,18 +72,23 @@
 			<button class='buttons clearStop' id='stop'>stop</button>
 			<button class='buttons clearStop' id='clear'>clear</button>&nbsp;<br>
 			
+			<!--   OPTIONS CONTAINER   -->
 			<div id='optionsContainer'>
-				<span class='minmax' id='min'>min</span><span class='minmax' id='max'>max</span><br>
-				<!-- limits of x-->
+				<span class='minmax' id='min'>min</span><span class='minmax' id='max'>max</span>
+				<br>
+				
+				<!--   LIMITS OF X   -->
 				<span class='limitsBox'>limits of <b>x</b>: &nbsp;<textarea class='limits' id='xLower'>-40</textarea>&nbsp;
 					<textarea class='limits' id='xUpper'>40</textarea>&nbsp;&nbsp;increment&nbsp;<textarea class='limits' id='xInc'>0.1</textarea>
-				</span>				
+				</span>	
+				<span id='timeOuter'>time:<span id='time'></span></span>			
 				
 				<br>
-				<!-- limits of n-->
+				<!--   LIMITS OF N   -->
 				<span class='limitsBox'>limits of <b>n</b>: &nbsp;<textarea class='limits' id='nLower'>-20</textarea>&nbsp;
-					<textarea class='limits' id='nUpper'>20</textarea>&nbsp;&nbsp;increment&nbsp;<textarea class='limits' id='nInc'>0.4</textarea>
-				</span>			
+					<textarea class='limits' id='nUpper'>20</textarea>&nbsp;&nbsp;increment&nbsp;<textarea class='limits' id='nInc'>1.2</textarea>
+				</span>	
+				<span id='npOuter' class=''> np: <span id='np'></span>	</span>	
 			</div>
 			
 			<div id='secondaryOptionsContainer'>
@@ -73,6 +97,8 @@
 				<span id='instructionsButton'>Instructions</span><!--instructions-->
 			</div>
 		</div>
+		
+		<!--   FORMATTING KEY   -->
 		<div id='formattingKey'>
 			Formatting:<br>
 			pow(2,x) = 2<sup>x</sup><br>
@@ -81,6 +107,15 @@
 			tan(x/n) + x*(2-n)<br>
 		</div>
 		<br>
+		
+		
+		
+		<!--___________________________________
+					
+				GRAPH		
+		-->
+		
+		
 		<!--<div class='ylabel'>+400</div>-->
 		<div id='graphOuter'>
 			<div id='graph'>
@@ -106,5 +141,6 @@
 		</div>
 		<!--<div class='ylabel'>-400</div>-->		
 	</div>
+	
 </body>
 </html>
