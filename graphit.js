@@ -1,4 +1,27 @@
-var hasN = false, mouseIsDown = false, xPos,yPos,diffX,moving=false;
+/*
+
+graphit.js is the javascript engine for generating several series of small html div elements that 
+collectively map out standard 2D user-defined functions of the form y = f(x).
+A second variable 'n' is available, which can act effectively as a 'time' variable, insofar as a 
+new graph is overlaid for each iteration of n. 
+The result is a function that changes dynamically for each 'n' value, and the overlaying of 
+this series of functions can result in interesting or beautiful patterns. 
+The UI is designed for practical experimentation. 
+Be aware that appending tens of thousands of div elements to the graph has a noticeably detrimental 
+effect on performance. 
+
+*/
+
+var hasN = false, mouseIsDown = false, xPos,yPos,diffX,moving=false,np=0;
+
+function con(msg){
+	console.log(msg);
+}
+var startTime = new Date().getTime();
+
+//
+//	PRELOAD FORMULA
+//
 function preloadFormula(){
 	var preload = [
 		'pow(x,2)*cos(n)/n/sin(x)',
@@ -20,6 +43,7 @@ function preloadFormula(){
 	$('#formula').val(pick);
 }
 $(document).ready(function(){
+	
 	preloadFormula();
 	$('#getSample').click(function(){
 		preloadFormula();
@@ -59,10 +83,16 @@ $(document).ready(function(){
 		moving = false;			
 	});
 	$('#generate').on('click',function(){
+		var np_counter = setInterval(function(){	//record number of points displayed
+			$('#np').html( $('.points').length );
+		},1000);
+		
+		
+		
 		hasN = false;
 		$('#msgBox').html('');				
 		
-		function valCheck(xL,xU,xI,nL,nU,nI){
+		function valCheck(xL,xU,xI,nL,nU,nI){	// L=lower, U=upper, I=increment
 			if (!isNaN(xL) && !isNaN(xU) && !isNaN(xI) && !isNaN(nL) && !isNaN(nU) && !isNaN(nI)){
 				return true;
 			}
@@ -125,8 +155,7 @@ $(document).ready(function(){
 					if (formula[i] == ' '){
 						formula = formula.slice(0,i) + formula.slice(i+1,formula.length);
 					}
-					i++;
-					
+					i++;					
 				}			
 				try {
 					var x = 1, n = 1, y = eval(formula);
@@ -235,6 +264,9 @@ function showGraph2(action){
 	},1);
 }
 
+//
+//SHOW GRAPH
+//
 function showGraph(formula,xLower,xUpper,xInc,nLower,nUpper,nInc,pSize){
 	var index = nInc.indexOf('.');
 	var decimalCount = nInc.substring(index+1,nInc.length).length;
@@ -250,10 +282,12 @@ function showGraph(formula,xLower,xUpper,xInc,nLower,nUpper,nInc,pSize){
 			$('.clearStop').on('click',function(){
 				$('#showN').css({'background-color':'white'});
 				clearInterval(graphing);
+				con(new Date().getTime() - startTime);
 			});
 			if (n > nUpper*1.){
 				$('#showN').css({'background-color':'white'});
 				clearInterval(graphing);
+				con(new Date().getTime() - startTime);
 			}
 			if (n <= nUpper){
 				$('#showN').css({'background-color':'rgb(214,251,214)'});
@@ -279,8 +313,16 @@ function showGraph(formula,xLower,xUpper,xInc,nLower,nUpper,nInc,pSize){
 			addPoint(x,y,pSize);
 		}
 	}
-}
+	$('#time').html(new Date() - startTime);
+	con(new Date() - startTime);
+}	
 
+
+
+
+//
+//ADD POINT
+//
 function addPoint(x,y,pSize){
 	pLeft = x*10+400;
 	pTop = 400-y*10;
@@ -288,12 +330,13 @@ function addPoint(x,y,pSize){
 		var point = document.createElement('div');
 		point.style.height = String(pSize) + 'px';
 		point.style.width = String(pSize) + 'px';
-		point.style.marginLeft = pLeft + 'px';
-		point.style.marginTop = pTop + 'px';
+		point.style.marginLeft = Math.round(pLeft) + 'px';
+		point.style.marginTop = Math.round(pTop) + 'px';
 		point.style.backgroundColor = 'black';
 		point.style.position = 'absolute';
 		point.style.zIndex = 200;	
 		point.className = 'points';		
 		$('#graph').append(point);
+		np++;
 	}
 }
